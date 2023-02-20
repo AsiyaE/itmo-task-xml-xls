@@ -1,5 +1,21 @@
+<?xml version="1.0" encoding='utf-8'?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+  <xsl:template match="/">
+    <html>
+    <head>
+      <title>Ермолаева Асия, P4110</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+      <xsl:apply-templates/>
+    </body>
+    </html>
+  </xsl:template>
+
    <!--  преобразование формулы  -->
+
   <xsl:template match="задание1">
     <math xmlns="http://www.w3.org/1998/Math/MathML">
       <xsl:apply-templates />
@@ -59,11 +75,11 @@
     <msub>
         <xsl:apply-templates select="*"/>
     </msub>
-  </xsl:template>
+  </xsl:template> 
 
-   <!--  отображение svg -->
+    <!-- отображение svg --> 
 
-   	<xsl:template match="задание2">
+  <xsl:template match="задание2">
         <svg width="{@ширина}" height="{@высота}" xmlns="http://www.w3.org/2000/svg">
         <xsl:apply-templates />
       </svg>
