@@ -17,6 +17,7 @@
    <!--  преобразование формулы  -->
 
   <xsl:template match="задание1">
+    <h2>Задание №1</h2>
     <math xmlns="http://www.w3.org/1998/Math/MathML">
       <xsl:apply-templates />
     </math>
@@ -80,13 +81,14 @@
     <!-- отображение svg --> 
 
   <xsl:template match="задание2">
-        <svg width="{@ширина}" height="{@высота}" xmlns="http://www.w3.org/2000/svg">
+    <h2>Задание №2</h2>
+      <svg width="{@ширина}" height="{@высота}" xmlns="http://www.w3.org/2000/svg">
         <xsl:apply-templates />
       </svg>
-    </xsl:template>
+  </xsl:template>
 
-    <xsl:template match="эллипс">
-      <ellipse id="{@id}" fill="{@заливка}" stroke="{@ободок}" stroke-width="{@ширина-ободка}" cx="{@cx}" cy="{@cy}" rx="{@rx}" ry="{@ry}"/>
-    </xsl:template>
+  <xsl:template match="эллипс">
+    <ellipse id="{@id}" fill="{@заливка}" stroke="{@ободок}" stroke-width="{@ширина-ободка}" cx="{@cx}" cy="{@cy}" rx="{@rx}" ry="{@ry}"/>
+  </xsl:template>
 
 </xsl:stylesheet>
